@@ -7,13 +7,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import androidx.lifecycle.LiveData;
-
 import java.util.LinkedList;
-import java.util.List;
 
 import si.uni_lj.fri.pbd.miniapp3.R;
 
+//Adapter for spinner
 public class SpinnerAdapter extends BaseAdapter {
 
     private LinkedList<String> recipeList;
@@ -41,6 +39,7 @@ public class SpinnerAdapter extends BaseAdapter {
         return position;
     }
 
+    //Setting view for every spinner item (every ingredient)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
@@ -57,6 +56,6 @@ public class SpinnerAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        TextView spinnerValue; //spinner name
+        TextView spinnerValue; //spinner ingredient
     }
 }

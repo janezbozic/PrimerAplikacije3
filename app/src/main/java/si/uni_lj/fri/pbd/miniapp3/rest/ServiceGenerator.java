@@ -17,6 +17,7 @@ public class ServiceGenerator {
         init();
     }
 
+    // Init of sHttpClient for API connection and calls
     private static void init() {
         sHttpClient = new OkHttpClient.Builder();
         sBuilder = new Retrofit.Builder().baseUrl(Constants.BASE_URL).addConverterFactory(GsonConverterFactory.create()); // TODO: add converter

@@ -178,7 +178,7 @@ public class RecipeDetails {
                   String strMeasure8, String strMeasure9, String strMeasure10, String strMeasure11,
                   String strMeasure12, String strMeasure13, String strMeasure14, String strMeasure15,
                   String strMeasure16, String strMeasure17, String strMeasure18, String strMeasure19,
-                  String strMeasure20, String strSource, String imageBitMap) {
+                  String strMeasure20, String strSource, String imageBitMap) { //Added bitmap string for image
         this.isFavorite = isFavorite;
         this.idMeal = idMeal;
         this.strMeal = strMeal;

@@ -9,6 +9,7 @@ import si.uni_lj.fri.pbd.miniapp3.models.dto.IngredientsDTO;
 import si.uni_lj.fri.pbd.miniapp3.models.dto.RecipesByIdDTO;
 import si.uni_lj.fri.pbd.miniapp3.models.dto.RecipesByIngredientDTO;
 
+//Interface for api calls to right endpoints and retrieving data
 public interface RestAPI {
 
     @GET("list.php?i=list")

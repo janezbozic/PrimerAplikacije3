@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         sectionsPagerAdapter = new SectionsPagerAdapter(this);
         viewPager.setAdapter(sectionsPagerAdapter);
 
+        // Created tab layout and tabs
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             switch (position){
                 case 0:

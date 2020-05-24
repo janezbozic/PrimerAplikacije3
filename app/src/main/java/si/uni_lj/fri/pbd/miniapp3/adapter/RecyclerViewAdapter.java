@@ -22,6 +22,7 @@ import si.uni_lj.fri.pbd.miniapp3.adapter.async.AsyncImageDownload;
 import si.uni_lj.fri.pbd.miniapp3.models.RecipeSummaryIM;
 import si.uni_lj.fri.pbd.miniapp3.ui.DetailsActivity;
 
+// Adapter for recycledViews
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private LayoutInflater mInflater;
@@ -49,11 +50,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         RecipeSummaryIM summary = mData.get(position);
         holder.textView.setText(summary.getStrMeal());
         if (!fav) {
+            //Retrieving / downloading image from API
             AsyncImageDownload asyncImageDownload = new AsyncImageDownload(holder.imageView, context);
             asyncImageDownload.execute(summary.getStrMealThumb());
         }
         else {
             try {
+                //Retrieving image from database
                 byte [] encodeByte= Base64.decode(summary.getImageBitmap(),Base64.DEFAULT);
                 Bitmap bitmap= BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
                 holder.imageView.setImageBitmap(bitmap);
@@ -74,6 +77,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         });
     }
 
+    // ViewHolder for item in recycledview
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textView;

@@ -61,16 +61,18 @@ public class DetailsActivity extends AppCompatActivity {
 
         mViewModel = new ViewModelProvider(this).get(FavoritesViewModel.class);
 
+        // Checking if DetailsActivity was called from favorites or from search fragment
         if (fav) {
-            initFromDB();
+            initFromDB(); //Recipes and layout init for DB (from favorites)
             mViewModel.findRec(id);
         }
         else
-            initFromUrl();
+            initFromUrl(); // Recipes and layout init for URL (from search)
     }
 
     private void initFromDB() {
 
+        // Search and all queries is done in background, so we observe data
         mViewModel.getSearchedRec().observe(this, new Observer<RecipeDetails>() {
             @Override
             public void onChanged(RecipeDetails recipeDetails) {
@@ -88,6 +90,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     private void initFromUrl() {
 
+        // API call and setting up recipe
         mRestClient.getRecipeWithId(id+"").enqueue(new Callback<RecipesByIdDTO>() {
             @Override
             public void onResponse(Call<RecipesByIdDTO> call, Response<RecipesByIdDTO> response) {
@@ -110,6 +113,7 @@ public class DetailsActivity extends AppCompatActivity {
         });
     }
 
+    // Showing recipe details
     private void showRecipe(RecipeDetailsIM recipe) {
 
         if (!fav) {
@@ -118,6 +122,7 @@ public class DetailsActivity extends AppCompatActivity {
         }
         else {
             try {
+                // Setting image from database
                 byte [] encodeByte=Base64.decode(recipe.getImageBitaMap(),Base64.DEFAULT);
                 Bitmap bitmap= BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
                 imageView.setImageBitmap(bitmap);
@@ -154,6 +159,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
 
+    // Setting button to add to favorites
     private void setActionButton(RecipeDetailsDTO recipeDetailsNew) {
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -164,7 +170,7 @@ public class DetailsActivity extends AppCompatActivity {
                     @Override
                     public void onChanged(RecipeDetails recipeDetails) {
                         if (recipeDetails == null){
-                            Bitmap bm=((BitmapDrawable)imageView.getDrawable()).getBitmap();
+                            Bitmap bm=((BitmapDrawable)imageView.getDrawable()).getBitmap(); //Saving image to database as String
                             ByteArrayOutputStream baos=new  ByteArrayOutputStream();
                             bm.compress(Bitmap.CompressFormat.PNG,100, baos);
                             byte [] b=baos.toByteArray();
@@ -183,6 +189,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
 
+    // Setting button for removing from favorites
     private void setActionButton (long id){
         button.setImageResource(R.drawable.ic_remove_circle_outline_black_24dp);
         button.setBackgroundColor(Color.red(1));
@@ -196,6 +203,7 @@ public class DetailsActivity extends AppCompatActivity {
         });
     }
 
+    // String formater for ingredients and measures
     private String format(String in, String q){
         if (in != null && q != null && in.length() > 0 && q.length() > 0)
             return "\t- " + in + ": " + q + "\n";

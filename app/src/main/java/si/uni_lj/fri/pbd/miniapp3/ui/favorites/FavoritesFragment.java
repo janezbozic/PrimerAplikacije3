@@ -45,6 +45,8 @@ public class FavoritesFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         recyclerView.setAdapter(new RecyclerViewAdapter(getActivity(),new ArrayList<>(), true));
 
+
+        // Getting all recipes from database (all favorite recipes)
         mViewModel.getAllRecips().observe(getViewLifecycleOwner(), new Observer<List<RecipeDetails>>() {
             @Override
             public void onChanged(List<RecipeDetails> products) {

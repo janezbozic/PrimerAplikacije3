@@ -77,6 +77,7 @@ public class SearchFragment extends Fragment{
 
         internet = false;
 
+        // Listening to internet state changes
         mNwCallback = new ConnectivityManager.NetworkCallback(){
             @Override
             public void onCapabilitiesChanged(@NonNull Network network, @NonNull NetworkCapabilities networkCapabilities) {
@@ -119,6 +120,7 @@ public class SearchFragment extends Fragment{
         return view;
     }
 
+    // API call for getting meals summaries for specific ingredient
     private void getMeals () {
         long dtime = System.currentTimeMillis();
         if (dtime - time > 5000) {
@@ -167,6 +169,7 @@ public class SearchFragment extends Fragment{
         }
     }
 
+    //API call for getting all ingredients for Spinner and than calling getMeals() method
     private void getIngridients() {
 
         LinkedList<String> list = new LinkedList<>();

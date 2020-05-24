@@ -10,6 +10,8 @@ import java.util.List;
 
 import si.uni_lj.fri.pbd.miniapp3.database.entity.RecipeDetails;
 
+// ViewModel for data from DataBase and Favorites fragment
+
 public class FavoritesViewModel extends AndroidViewModel {
 
     private LiveData<List<RecipeDetails>> allRecips;

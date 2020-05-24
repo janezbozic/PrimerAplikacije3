@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+//Class for async download of images from API
 public class AsyncImageDownload extends AsyncTask<String, Integer, Bitmap> {
 
     ImageView imageView;

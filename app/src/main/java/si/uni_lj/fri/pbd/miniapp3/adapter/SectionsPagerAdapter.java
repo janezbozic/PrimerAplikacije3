@@ -8,13 +8,14 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import si.uni_lj.fri.pbd.miniapp3.ui.favorites.FavoritesFragment;
 import si.uni_lj.fri.pbd.miniapp3.ui.search.SearchFragment;
 
+// Adapter for Pager
 public class SectionsPagerAdapter extends FragmentStateAdapter {
-
 
     public SectionsPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 
+    // Creates fragments for pages
     @NonNull
     @Override
     public Fragment createFragment(int position) {

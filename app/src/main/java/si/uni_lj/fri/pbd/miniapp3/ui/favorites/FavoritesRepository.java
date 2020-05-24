@@ -11,6 +11,8 @@ import si.uni_lj.fri.pbd.miniapp3.database.Database;
 import si.uni_lj.fri.pbd.miniapp3.database.dao.RecipeDao;
 import si.uni_lj.fri.pbd.miniapp3.database.entity.RecipeDetails;
 
+// Repository for handling data from DataBase
+
 public class FavoritesRepository {
 
     private RecipeDao recipeDao;
