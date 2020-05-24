@@ -1,251 +1,154 @@
-package si.uni_lj.fri.pbd.miniapp3.database.entity;
+package si.uni_lj.fri.pbd.miniapp3.models.dto;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.Ignore;
-import androidx.room.PrimaryKey;
+import com.google.gson.annotations.SerializedName;
 
-@Entity
-public class RecipeDetails {
+import java.util.Date;
 
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    private Long id;
+public class RecipeDetailsDTO {
 
-    @ColumnInfo(name = "isFavorite")
-    private Boolean isFavorite;
-
-    @ColumnInfo(name = "imageBitMap")
-    private String imageBitMap;
-
-    @ColumnInfo(name = "idMeal")
+    @SerializedName("idMeal")
     private String idMeal;
 
-    @ColumnInfo(name = "strMeal")
+    @SerializedName("strMeal")
     private String strMeal;
 
-    @ColumnInfo(name = "strCategory")
+    @SerializedName("strCategory")
     private String strCategory;
 
-    @ColumnInfo(name = "strArea")
+    @SerializedName("strArea")
     private String strArea;
 
-    @ColumnInfo(name = "strInstructions")
+    @SerializedName("strInstructions")
     private String strInstructions;
 
-    @ColumnInfo(name = "strMealThumb")
+    @SerializedName("strMealThumb")
     private String strMealThumb;
 
-    @ColumnInfo(name = "strYoutube")
+    @SerializedName("strYoutube")
     private String strYoutube;
 
-    @ColumnInfo(name = "strIngredient1")
+    @SerializedName("strIngredient1")
     private String strIngredient1;
 
-    @ColumnInfo(name = "strIngredient2")
+    @SerializedName("strIngredient2")
     private String strIngredient2;
 
-    @ColumnInfo(name = "strIngredient3")
+    @SerializedName("strIngredient3")
     private String strIngredient3;
 
-    @ColumnInfo(name = "strIngredient4")
+    @SerializedName("strIngredient4")
     private String strIngredient4;
 
-    @ColumnInfo(name = "strIngredient5")
+    @SerializedName("strIngredient5")
     private String strIngredient5;
 
-    @ColumnInfo(name = "strIngredient6")
+    @SerializedName("strIngredient6")
     private String strIngredient6;
 
-    @ColumnInfo(name = "strIngredient7")
+    @SerializedName("strIngredient7")
     private String strIngredient7;
 
-    @ColumnInfo(name = "strIngredient8")
+    @SerializedName("strIngredient8")
     private String strIngredient8;
 
-    @ColumnInfo(name = "strIngredient9")
+    @SerializedName("strIngredient9")
     private String strIngredient9;
 
-    @ColumnInfo(name = "strIngredient10")
+    @SerializedName("strIngredient10")
     private String strIngredient10;
 
-    @ColumnInfo(name = "strIngredient11")
+    @SerializedName("strIngredient11")
     private String strIngredient11;
 
-    @ColumnInfo(name = "strIngredient12")
+    @SerializedName("strIngredient12")
     private String strIngredient12;
 
-    @ColumnInfo(name = "strIngredient13")
+    @SerializedName("strIngredient13")
     private String strIngredient13;
 
-    @ColumnInfo(name = "strIngredient14")
+    @SerializedName("strIngredient14")
     private String strIngredient14;
 
-    @ColumnInfo(name = "strIngredient15")
+    @SerializedName("strIngredient15")
     private String strIngredient15;
 
-    @ColumnInfo(name = "strIngredient16")
+    @SerializedName("strIngredient16")
     private String strIngredient16;
 
-    @ColumnInfo(name = "strIngredient117")
+    @SerializedName("strIngredient17")
     private String strIngredient17;
 
-    @ColumnInfo(name = "strIngredient18")
+    @SerializedName("strIngredient18")
     private String strIngredient18;
 
-    @ColumnInfo(name = "strIngredient19")
+    @SerializedName("strIngredient19")
     private String strIngredient19;
 
-    @ColumnInfo(name = "strIngredient20")
+    @SerializedName("strIngredient20")
     private String strIngredient20;
 
-    @ColumnInfo(name = "strMeasure1")
+    @SerializedName("strMeasure1")
     private String strMeasure1;
 
-    @ColumnInfo(name = "strMeasure2")
+    @SerializedName("strMeasure2")
     private String strMeasure2;
 
-    @ColumnInfo(name = "strMeasure3")
+    @SerializedName("strMeasure3")
     private String strMeasure3;
 
-    @ColumnInfo(name = "strMeasure4")
+    @SerializedName("strMeasure4")
     private String strMeasure4;
 
-    @ColumnInfo(name = "strMeasure5")
+    @SerializedName("strMeasure5")
     private String strMeasure5;
 
-    @ColumnInfo(name = "strMeasure6")
+    @SerializedName("strMeasure6")
     private String strMeasure6;
 
-    @ColumnInfo(name = "strMeasure7")
+    @SerializedName("strMeasure7")
     private String strMeasure7;
 
-    @ColumnInfo(name = "strMeasure8")
+    @SerializedName("strMeasure8")
     private String strMeasure8;
 
-    @ColumnInfo(name = "strMeasure9")
+    @SerializedName("strMeasure9")
     private String strMeasure9;
 
-    @ColumnInfo(name = "strMeasure10")
+    @SerializedName("strMeasure10")
     private String strMeasure10;
 
-    @ColumnInfo(name = "strMeasure11")
+    @SerializedName("strMeasure11")
     private String strMeasure11;
 
-    @ColumnInfo(name = "strMeasure12")
+    @SerializedName("strMeasure12")
     private String strMeasure12;
 
-    @ColumnInfo(name = "strMeasure13")
+    @SerializedName("strMeasure13")
     private String strMeasure13;
 
-    @ColumnInfo(name = "strMeasure14")
+    @SerializedName("strMeasure14")
     private String strMeasure14;
 
-    @ColumnInfo(name = "strMeasure15")
+    @SerializedName("strMeasure15")
     private String strMeasure15;
 
-    @ColumnInfo(name = "strMeasure16")
+    @SerializedName("strMeasure16")
     private String strMeasure16;
 
-    @ColumnInfo(name = "strMeasure17")
+    @SerializedName("strMeasure17")
     private String strMeasure17;
 
-    @ColumnInfo(name = "strMeasure18")
+    @SerializedName("strMeasure18")
     private String strMeasure18;
 
-    @ColumnInfo(name = "strMeasure19")
+    @SerializedName("strMeasure19")
     private String strMeasure19;
 
-    @ColumnInfo(name = "strMeasure20")
+    @SerializedName("strMeasure20")
     private String strMeasure20;
 
-    @ColumnInfo(name = "strSource")
+    @SerializedName("strSource")
     private String strSource;
-
-    @Ignore
-    public RecipeDetails(){}
-
-    public RecipeDetails(Boolean isFavorite, String idMeal, String strMeal, String strCategory, String strArea,
-                  String strInstructions, String strMealThumb, String strYoutube, String strIngredient1,
-                  String strIngredient2, String strIngredient3, String strIngredient4,
-                  String strIngredient5, String strIngredient6, String strIngredient7,
-                  String strIngredient8, String strIngredient9, String strIngredient10,
-                  String strIngredient11, String strIngredient12, String strIngredient13,
-                  String strIngredient14, String strIngredient15, String strIngredient16,
-                  String strIngredient17, String strIngredient18, String strIngredient19,
-                  String strIngredient20, String strMeasure1, String strMeasure2, String strMeasure3,
-                  String strMeasure4, String strMeasure5, String strMeasure6, String strMeasure7,
-                  String strMeasure8, String strMeasure9, String strMeasure10, String strMeasure11,
-                  String strMeasure12, String strMeasure13, String strMeasure14, String strMeasure15,
-                  String strMeasure16, String strMeasure17, String strMeasure18, String strMeasure19,
-                  String strMeasure20, String strSource, String imageBitMap) {
-        this.isFavorite = isFavorite;
-        this.idMeal = idMeal;
-        this.strMeal = strMeal;
-        this.strCategory = strCategory;
-        this.strArea = strArea;
-        this.strInstructions = strInstructions;
-        this.strMealThumb = strMealThumb;
-        this.strYoutube = strYoutube;
-        this.strIngredient1 = strIngredient1;
-        this.strIngredient2 = strIngredient2;
-        this.strIngredient3 = strIngredient3;
-        this.strIngredient4 = strIngredient4;
-        this.strIngredient5 = strIngredient5;
-        this.strIngredient6 = strIngredient6;
-        this.strIngredient7 = strIngredient7;
-        this.strIngredient8 = strIngredient8;
-        this.strIngredient9 = strIngredient9;
-        this.strIngredient10 = strIngredient10;
-        this.strIngredient11 = strIngredient11;
-        this.strIngredient12 = strIngredient12;
-        this.strIngredient13 = strIngredient13;
-        this.strIngredient14 = strIngredient14;
-        this.strIngredient15 = strIngredient15;
-        this.strIngredient16 = strIngredient16;
-        this.strIngredient17 = strIngredient17;
-        this.strIngredient18 = strIngredient18;
-        this.strIngredient19 = strIngredient19;
-        this.strIngredient20 = strIngredient20;
-        this.strMeasure1 = strMeasure1;
-        this.strMeasure2 = strMeasure2;
-        this.strMeasure3 = strMeasure3;
-        this.strMeasure4 = strMeasure4;
-        this.strMeasure5 = strMeasure5;
-        this.strMeasure6 = strMeasure6;
-        this.strMeasure7 = strMeasure7;
-        this.strMeasure8 = strMeasure8;
-        this.strMeasure9 = strMeasure9;
-        this.strMeasure10 = strMeasure10;
-        this.strMeasure11 = strMeasure11;
-        this.strMeasure12 = strMeasure12;
-        this.strMeasure13 = strMeasure13;
-        this.strMeasure14 = strMeasure14;
-        this.strMeasure15 = strMeasure15;
-        this.strMeasure16 = strMeasure16;
-        this.strMeasure17 = strMeasure17;
-        this.strMeasure18 = strMeasure18;
-        this.strMeasure19 = strMeasure19;
-        this.strMeasure20 = strMeasure20;
-        this.strSource = strSource;
-        this.imageBitMap = imageBitMap;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Boolean getFavorite() {
-        return isFavorite;
-    }
-
-    public void setFavorite(Boolean favorite) {
-        isFavorite = favorite;
-    }
 
     public String getIdMeal() {
         return idMeal;
@@ -629,69 +532,5 @@ public class RecipeDetails {
 
     public void setStrSource(String strSource) {
         this.strSource = strSource;
-    }
-
-    public String getImageBitMap() {
-        return imageBitMap;
-    }
-
-    public void setImageBitMap(String imageBitMap) {
-        this.imageBitMap = imageBitMap;
-    }
-
-    @Override
-    public String toString() {
-        return "RecipeDetails {" +
-                "id=" + id +
-                ", isFavorite=" + isFavorite +
-                ", idMeal='" + idMeal + '\'' +
-                ", strMeal='" + strMeal + '\'' +
-                ", strCategory='" + strCategory + '\'' +
-                ", strArea='" + strArea + '\'' +
-                ", strInstructions='" + strInstructions + '\'' +
-                ", strMealThumb='" + strMealThumb + '\'' +
-                ", strYoutube='" + strYoutube + '\'' +
-                ", strIngredient1='" + strIngredient1 + '\'' +
-                ", strIngredient2='" + strIngredient2 + '\'' +
-                ", strIngredient3='" + strIngredient3 + '\'' +
-                ", strIngredient4='" + strIngredient4 + '\'' +
-                ", strIngredient5='" + strIngredient5 + '\'' +
-                ", strIngredient6='" + strIngredient6 + '\'' +
-                ", strIngredient7='" + strIngredient7 + '\'' +
-                ", strIngredient8='" + strIngredient8 + '\'' +
-                ", strIngredient9='" + strIngredient9 + '\'' +
-                ", strIngredient10='" + strIngredient10 + '\'' +
-                ", strIngredient11='" + strIngredient11 + '\'' +
-                ", strIngredient12='" + strIngredient12 + '\'' +
-                ", strIngredient13='" + strIngredient13 + '\'' +
-                ", strIngredient14='" + strIngredient14 + '\'' +
-                ", strIngredient15='" + strIngredient15 + '\'' +
-                ", strIngredient16='" + strIngredient16 + '\'' +
-                ", strIngredient17='" + strIngredient17 + '\'' +
-                ", strIngredient18='" + strIngredient18 + '\'' +
-                ", strIngredient19='" + strIngredient19 + '\'' +
-                ", strIngredient20='" + strIngredient20 + '\'' +
-                ", strMeasure1='" + strMeasure1 + '\'' +
-                ", strMeasure2='" + strMeasure2 + '\'' +
-                ", strMeasure3='" + strMeasure3 + '\'' +
-                ", strMeasure4='" + strMeasure4 + '\'' +
-                ", strMeasure5='" + strMeasure5 + '\'' +
-                ", strMeasure6='" + strMeasure6 + '\'' +
-                ", strMeasure7='" + strMeasure7 + '\'' +
-                ", strMeasure8='" + strMeasure8 + '\'' +
-                ", strMeasure9='" + strMeasure9 + '\'' +
-                ", strMeasure10='" + strMeasure10 + '\'' +
-                ", strMeasure11='" + strMeasure11 + '\'' +
-                ", strMeasure12='" + strMeasure12 + '\'' +
-                ", strMeasure13='" + strMeasure13 + '\'' +
-                ", strMeasure14='" + strMeasure14 + '\'' +
-                ", strMeasure15='" + strMeasure15 + '\'' +
-                ", strMeasure16='" + strMeasure16 + '\'' +
-                ", strMeasure17='" + strMeasure17 + '\'' +
-                ", strMeasure18='" + strMeasure18 + '\'' +
-                ", strMeasure19='" + strMeasure19 + '\'' +
-                ", strMeasure20='" + strMeasure20 + '\'' +
-                ", strSource='" + strSource + '\'' +
-                '}';
     }
 }

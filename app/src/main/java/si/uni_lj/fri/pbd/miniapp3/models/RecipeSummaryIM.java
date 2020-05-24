@@ -4,11 +4,13 @@ public class RecipeSummaryIM {
     private String strMeal;
     private String strMealThumb;
     private String idMeal;
+    private String imageBitmap;
 
-    public RecipeSummaryIM(String strMeal, String strMealThumb, String idMeal) {
+    public RecipeSummaryIM(String strMeal, String strMealThumb, String idMeal, String imageBitmap) {
         this.strMeal = strMeal;
         this.strMealThumb = strMealThumb;
         this.idMeal = idMeal;
+        this.imageBitmap = imageBitmap;
     }
 
     public String getStrMeal() {
@@ -21,6 +23,10 @@ public class RecipeSummaryIM {
 
     public String getIdMeal() {
         return idMeal;
+    }
+
+    public String getImageBitmap() {
+        return imageBitmap;
     }
 
     @Override

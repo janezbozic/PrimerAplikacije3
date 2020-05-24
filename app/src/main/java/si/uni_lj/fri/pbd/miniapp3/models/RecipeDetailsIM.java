@@ -51,6 +51,7 @@ public class RecipeDetailsIM {
     private String strMeasure19;
     private String strMeasure20;
     private String strSource;
+    private String imageBitaMap;
 
     public RecipeDetailsIM() {}
 
@@ -64,7 +65,7 @@ public class RecipeDetailsIM {
                            String strMeasure2, String strMeasure3, String strMeasure4, String strMeasure5, String strMeasure6,
                            String strMeasure7, String strMeasure8, String strMeasure9, String strMeasure10, String strMeasure11,
                            String strMeasure12, String strMeasure13, String strMeasure14, String strMeasure15, String strMeasure16,
-                           String strMeasure17, String strMeasure18, String strMeasure19, String strMeasure20, String strSource) {
+                           String strMeasure17, String strMeasure18, String strMeasure19, String strMeasure20, String strSource, String imageBitaMap) {
         this.isFavorite = isFavorite;
         this.idMeal = idMeal;
         this.strMeal = strMeal;
@@ -114,6 +115,7 @@ public class RecipeDetailsIM {
         this.strMeasure19 = strMeasure19;
         this.strMeasure20 = strMeasure20;
         this.strSource = strSource;
+        this.imageBitaMap = imageBitaMap;
     }
 
     public Boolean getFavorite() {
@@ -150,6 +152,14 @@ public class RecipeDetailsIM {
 
     public String getStrYoutube() {
         return strYoutube;
+    }
+
+    public String getImageBitaMap() {
+        return imageBitaMap;
+    }
+
+    public void setImageBitaMap(String imageBitaMap) {
+        this.imageBitaMap = imageBitaMap;
     }
 
     public String getStrIngredient1() {

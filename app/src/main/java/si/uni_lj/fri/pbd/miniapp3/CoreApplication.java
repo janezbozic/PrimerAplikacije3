@@ -2,9 +2,13 @@ package si.uni_lj.fri.pbd.miniapp3;
 
 import android.app.Application;
 
+import com.amitshekhar.BuildConfig;
+
 import timber.log.Timber;
 
 public class CoreApplication extends Application {
+
+    private static CoreApplication mInstance;
 
     @Override
     public void onCreate() {

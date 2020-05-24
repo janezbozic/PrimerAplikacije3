@@ -1,16 +1,15 @@
 package si.uni_lj.fri.pbd.miniapp3.models;
 
 import si.uni_lj.fri.pbd.miniapp3.database.entity.RecipeDetails;
+import si.uni_lj.fri.pbd.miniapp3.models.dto.RecipeDetailsDTO;
 
 public final class Mapper {
 
     public static RecipeSummaryIM mapRecipeDetailsToRecipeSummaryIm(RecipeDetails rec) {
-        return new RecipeSummaryIM(rec.getStrMeal(), rec.getStrMealThumb(), rec.getIdMeal());
+        return new RecipeSummaryIM(rec.getStrMeal(), rec.getStrMealThumb(), rec.getIdMeal(), rec.getImageBitMap());
     }
 
-    // TODO: Uncomment the code below
-/*
-    public static RecipeDetails mapRecipeDetailsDtoToRecipeDetails(Boolean isFavorite, RecipeDetailsDTO dto) {
+    public static RecipeDetails mapRecipeDetailsDtoToRecipeDetails(Boolean isFavorite, RecipeDetailsDTO dto, String bitmap) {
         return new RecipeDetails(
                 isFavorite,
                 dto.getIdMeal(),
@@ -60,7 +59,8 @@ public final class Mapper {
                 dto.getStrMeasure18(),
                 dto.getStrMeasure19(),
                 dto.getStrMeasure20(),
-                dto.getStrSource());
+                dto.getStrSource(),
+                bitmap);
     }
 
     public static RecipeDetailsIM mapRecipeDetailsDtoToRecipeDetailsIm(Boolean isFavorite, RecipeDetailsDTO dto) {
@@ -112,8 +112,8 @@ public final class Mapper {
                 dto.getStrMeasure18(),
                 dto.getStrMeasure19(),
                 dto.getStrMeasure20(),
-                dto.getStrSource());
-    }*/
+                dto.getStrSource(), "");
+    }
 
     public static RecipeDetailsIM mapRecipeDetailsToRecipeDetailsIm(Boolean isFavorite, RecipeDetails dto) {
         return new RecipeDetailsIM(
@@ -165,7 +165,8 @@ public final class Mapper {
                 dto.getStrMeasure18(),
                 dto.getStrMeasure19(),
                 dto.getStrMeasure20(),
-                dto.getStrSource());
+                dto.getStrSource(),
+                dto.getImageBitMap());
     }
 
 }
