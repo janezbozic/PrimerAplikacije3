@@ -32,7 +32,6 @@ import si.uni_lj.fri.pbd.miniapp3.models.dto.RecipesByIdDTO;
 import si.uni_lj.fri.pbd.miniapp3.rest.RestAPI;
 import si.uni_lj.fri.pbd.miniapp3.rest.ServiceGenerator;
 import si.uni_lj.fri.pbd.miniapp3.ui.favorites.FavoritesViewModel;
-import timber.log.Timber;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -79,6 +78,9 @@ public class DetailsActivity extends AppCompatActivity {
                     showRecipe(Mapper.mapRecipeDetailsToRecipeDetailsIm(true, recipeDetails));
                     setActionButton(recipeDetails.getId());
                 }
+                else {
+                    Toast.makeText(DetailsActivity.this, "No details to show.", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -95,17 +97,17 @@ public class DetailsActivity extends AppCompatActivity {
                         showRecipe(Mapper.mapRecipeDetailsDtoToRecipeDetailsIm(false, recipe));
                         setActionButton(recipe);
                     }
+                    else {
+                        Toast.makeText(DetailsActivity.this, "No details to show.", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
 
             @Override
-            public void onFailure(Call<RecipesByIdDTO> call, Throwable t) {
-                Timber.d("aa");
+            public void onFailure(Call<RecipesByIdDTO> call, Throwable t){
+                Toast.makeText(DetailsActivity.this, "Something went wrong while fetching the details. Problem connecting to server.", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
     }
 
     private void showRecipe(RecipeDetailsIM recipe) {
@@ -152,17 +154,30 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
 
-    private void setActionButton(RecipeDetailsDTO recipeDetails) {
+    private void setActionButton(RecipeDetailsDTO recipeDetailsNew) {
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bitmap bm=((BitmapDrawable)imageView.getDrawable()).getBitmap();
-                ByteArrayOutputStream baos=new  ByteArrayOutputStream();
-                bm.compress(Bitmap.CompressFormat.PNG,100, baos);
-                byte [] b=baos.toByteArray();
-                String temp= Base64.encodeToString(b, Base64.DEFAULT);
-                mViewModel.insertRec(Mapper.mapRecipeDetailsDtoToRecipeDetails(true, recipeDetails, temp));
+                mViewModel.findRec(id);
+                mViewModel.getSearchedRec().observe(DetailsActivity.this, new Observer<RecipeDetails>() {
+                    @Override
+                    public void onChanged(RecipeDetails recipeDetails) {
+                        if (recipeDetails == null){
+                            Bitmap bm=((BitmapDrawable)imageView.getDrawable()).getBitmap();
+                            ByteArrayOutputStream baos=new  ByteArrayOutputStream();
+                            bm.compress(Bitmap.CompressFormat.PNG,100, baos);
+                            byte [] b=baos.toByteArray();
+                            String temp= Base64.encodeToString(b, Base64.DEFAULT);
+                            mViewModel.insertRec(Mapper.mapRecipeDetailsDtoToRecipeDetails(true, recipeDetailsNew, temp));
+                            button.setVisibility(View.GONE);
+                            Toast.makeText(getApplicationContext(), "Recipe added to favorites.", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(DetailsActivity.this, "Recipe is already in favorites list.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
 
@@ -176,7 +191,7 @@ public class DetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mViewModel.deleteRec(id);
                 button.setVisibility(View.GONE);
-                Toast.makeText(getApplicationContext(), "Recepi removed from favourites.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Recipe removed from favorites.", Toast.LENGTH_SHORT).show();
             }
         });
     }
